@@ -17,17 +17,15 @@
 #define extendedfunc(a, b) a b(
 #define func(x) extendedfunc(number, x)
 #define linit air langinit() { srand(1024) equend }
-#define main linit func(main) func_args_end langinit();
-#define runner main
+#define runnermain linit func(main) func_args_end langinit();
+#define linit_decl air langinit() equend
+#define main_decl int main() equend
+#define runner runnermain
+#define runner_decl linit_decl main_decl
 #define addressify &
 #define addressify_revert *
 #define reference addressify_revert
 #define reference_convert(x, c) (c)x
-#define argcreate number
-#define var argcreate
-#define varp argcreate reference
-#define arg argcreate
-#define argp argcreate reference
 #define func_args_end ) { jump(execution) codepart(execution)
 #define placeholder extendedfunc(letter, placeholder) func_args_end ret(0)
 #define ret(x) return x equend }
@@ -55,5 +53,6 @@
 #define equcheck_end }
 #define loopstop break equend
 #define copydata(dst, src, bytes) memcpy(dst, src, bytes) equend
+#define external extern
 
-#define PRAGMALANG_REVISION 0x0001
+#define PRAGMALANG_REVISION 0x0002
