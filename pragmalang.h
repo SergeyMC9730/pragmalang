@@ -16,7 +16,10 @@
 #define codepart(x) x:
 #define extendedfunc(a, b) a b(
 #define func(x) extendedfunc(number, x)
-#define linit air langinit() { srand(1024) equend }
+#define ret(x) return x equend }
+#define lpush air push(number x) {}
+#define lpop number pop() {number x unspec return equend}
+#define linit air langinit() { srand(1024) equend } lpush lpop
 #define runnermain linit func(main) func_args_end langinit();
 #define linit_decl air langinit() equend
 #define main_decl int main() equend
@@ -28,13 +31,14 @@
 #define reference_convert(x, c) (c)x
 #define func_args_end ) { jump(execution) codepart(execution)
 #define placeholder extendedfunc(letter, placeholder) func_args_end ret(0)
-#define ret(x) return x equend }
+#define varcreate(x) push(x) equend
+#define last_variable pop()
 #define as(x) x
-#define to(x) = x equend
+#define to(x) = x equend varcreate(x)
+#define add(x) += x
+#define mul(x) *= x
+#define div(x) /= x
 #define and ,
-#define add(x) += x equend
-#define mul(x) *= x equend
-#define div(x) /= x equend
 #define print printf(
 #define newline "\n" end
 #define textdata(x) x) equend
@@ -44,15 +48,14 @@
 #define exec(x) x(
 #define setarg(x) x
 #define new(x) (x *)malloc(sizeof(x))
-#define no free(
+#define delete free(
 #define loop(a, b) while(a < b) {
 #define loopend(a) a add(1) }
-#define Ccode(x) x
-#define data_getarray(i) [i]
+#define executeC(x) x
+#define array_at(i) [i]
 #define equcheck(e) if(e) {
 #define equcheck_end }
 #define loopstop break equend
-#define copydata(dst, src, bytes) memcpy(dst, src, bytes) equend
 #define external extern
 
-#define PRAGMALANG_REVISION 0x0002
+#define PRAGMALANG_REVISION 0x0003
